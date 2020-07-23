@@ -1,0 +1,35 @@
+<! DOCTYPE html >
+<head>
+    <title>How Old You Are</title>
+    <meta charset = "UTF - 8">
+    <meta name = "viewport" content = "width=devise-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "">
+</head>
+
+<body>
+    <header>
+        <h1> How old you are ?</h1>
+        <h2> Have you ever wandered how many month you live? How many weeks and days?<br/>
+             That site was created for given answer for you!
+        </h2>
+    </header>
+    <div>
+        <p>That`s simple. You need only type the day you were born and press submit</p>
+        <p> Have fun</p>
+    </div>
+    {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+    <form method = "post">
+        <div>
+            <label for="data">Date</label>
+            <input type="date"  name="date" value="2020-06-20">
+        </div>
+        <button type="submit"> Submit </button>
+    </form>
+    {% if days %}
+      <div class="answer">
+        <p>You live already {{ days }} days!</p>
+      </div>
+    {% endif %}
+</body>
